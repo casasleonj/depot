@@ -34,7 +34,7 @@ class DepartmentsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update department" do
-    patch department_url(@department), params: { department: {  name_department: @department.name_department, code_department: @department.code_department = 2 } }
+    patch department_url(@department), params: { department: {  name_department: @department.name_department, code_department: @department.code_department = 2} }
     assert_redirected_to department_url(@department)
   end
 

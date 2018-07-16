@@ -12,9 +12,10 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
- name_department: MyString
- code_department: 1
-
+ id: 1
+ name_department: one
+ code_department: 15
 two:
- name_department: MyString
- code_department: 1
+ id: 2
+ name_department: two
+ code_department: 16

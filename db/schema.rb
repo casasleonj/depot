@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_13_230710) do
+ActiveRecord::Schema.define(version: 2018_07_15_214757) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cities", force: :cascade do |t|
+    t.string "name_city"
+    t.integer "code_city"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "department_id"
+    t.index ["department_id"], name: "index_cities_on_department_id"
+  end
 
   create_table "departments", force: :cascade do |t|
     t.string "name_department"
@@ -22,4 +31,14 @@ ActiveRecord::Schema.define(version: 2018_07_13_230710) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "neighborhoods", force: :cascade do |t|
+    t.string "name_neighborhood"
+    t.bigint "city_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["city_id"], name: "index_neighborhoods_on_city_id"
+  end
+
+  add_foreign_key "cities", "departments"
+  add_foreign_key "neighborhoods", "cities"
 end

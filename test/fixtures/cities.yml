@@ -1,0 +1,24 @@
+# == Schema Information
+#
+# Table name: cities
+#
+#  id            :bigint(8)        not null, primary key
+#  name_city     :string
+#  code_city     :integer
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#  department_id :bigint(8)
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+ id: 1
+ name_city: one
+ code_city: 8
+ department: one
+two:
+ id: 2
+ name_city: two
+ code_city: 10
+ department: two

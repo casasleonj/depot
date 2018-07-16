@@ -31,6 +31,7 @@ class DepartmentsController < ApplicationController
         format.html { redirect_to @department, notice: 'Department was successfully created.' }
         format.json { render :show, status: :created, location: @department }
       else
+        puts @department.errors.full_messages
         format.html { render :new }
         format.json { render json: @department.errors, status: :unprocessable_entity }
       end

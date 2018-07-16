@@ -15,7 +15,7 @@ department_list = [
   [ "ARAUCA", 81],
   [ "ATLANTICO", 8],
   ["BOLIVAR", 13],
-  ["BOYACA", 15],
+  ["BOYACÁ", 15],
   [ "CALDAS", 17],
   [ "CAQUETA", 18],
   [ "CASANARE", 85],
@@ -48,3 +48,6 @@ department_list = [
 department_list.each do |name_department, code_department|
   Department.create( name_department: name_department, code_department: code_department )
 end
+
+#City.delete_all
+#...

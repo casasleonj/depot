@@ -12,6 +12,7 @@
 require 'test_helper'
 
 class DepartmentTest < ActiveSupport::TestCase
+    fixture_path
   test "department attributes must not be empty" do
      department = Department.new
       assert department.invalid?
