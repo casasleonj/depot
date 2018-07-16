@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_15_214757) do
+ActiveRecord::Schema.define(version: 2018_07_16_041811) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "addresses", force: :cascade do |t|
+    t.string "adress"
+    t.bigint "neighborhood_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "headquarter_id"
+    t.index ["headquarter_id"], name: "index_addresses_on_headquarter_id"
+    t.index ["neighborhood_id"], name: "index_addresses_on_neighborhood_id"
+  end
 
   create_table "cities", force: :cascade do |t|
     t.string "name_city"
@@ -31,6 +41,15 @@ ActiveRecord::Schema.define(version: 2018_07_15_214757) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "headquarters", force: :cascade do |t|
+    t.string "name_headquarters"
+    t.integer "number_headquarters"
+    t.bigint "address_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["address_id"], name: "index_headquarters_on_address_id"
+  end
+
   create_table "neighborhoods", force: :cascade do |t|
     t.string "name_neighborhood"
     t.bigint "city_id"
@@ -39,6 +58,9 @@ ActiveRecord::Schema.define(version: 2018_07_15_214757) do
     t.index ["city_id"], name: "index_neighborhoods_on_city_id"
   end
 
+  add_foreign_key "addresses", "headquarters"
+  add_foreign_key "addresses", "neighborhoods"
   add_foreign_key "cities", "departments"
+  add_foreign_key "headquarters", "addresses"
   add_foreign_key "neighborhoods", "cities"
 end

@@ -1,0 +1,32 @@
+<%= form_with(model: headquarter, local: true) do |form| %>
+  <% if headquarter.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(headquarter.errors.count, "error") %> prohibited this headquarter from being saved:</h2>
+
+      <ul>
+      <% headquarter.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name_headquarters %>
+    <%= form.text_field :name_headquarters %>
+  </div>
+
+  <div class="field">
+    <%= form.label :number_headquarters %>
+    <%= form.number_field :number_headquarters %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address_id %>
+    <%= form.text_field :address_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,23 @@
+# == Schema Information
+#
+# Table name: addresses
+#
+#  id              :bigint(8)        not null, primary key
+#  adress          :string
+#  neighborhood_id :bigint(8)
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  headquarter_id  :bigint(8)
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+ adress: MyString
+ neighborhood: one
+ headquarter: one
+
+two:
+ adress: MyString
+ neighborhood: two
+ headquarter: two

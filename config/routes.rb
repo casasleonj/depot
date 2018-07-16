@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :headquarters
+  resources :addresses
   resources :neighborhoods
   resources :cities
   root 'departments#index'

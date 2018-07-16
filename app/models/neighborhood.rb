@@ -11,6 +11,7 @@
 
 class Neighborhood < ApplicationRecord
   belongs_to :city, optional: true
+  has_many :address, dependent: :destroy
   
  validates_presence_of attribute_names.reject { |attr| attr =~ /id|created_at|updated_at/i }
  validates :name_neighborhood, uniqueness: true

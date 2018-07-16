@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name headquarters:</strong>
+  <%= @headquarter.name_headquarters %>
+</p>
+
+<p>
+  <strong>Number headquarters:</strong>
+  <%= @headquarter.number_headquarters %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @headquarter.address %>
+</p>
+
+<%= link_to 'Edit', edit_headquarter_path(@headquarter) %> |
+<%= link_to 'Back', headquarters_path %>
